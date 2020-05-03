@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body id="home" data-spy="scroll" data-target="#main-nav">
+    <!--Navbar-->
+    <nav id="main-nav" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Brand Name</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#section-A" class="nav-link grow">Section A</a></li>
+                    <li class="nav-item"><a href="#section-B" class="nav-link grow">Section B</a></li>
+                    <li class="nav-item"><a href="#section-C" class="nav-link grow">Section C</a></li>
+                    <li class="nav-item"><a href="#section-D" class="nav-link grow">Section D</a></li>
+                    <li class="nav-item"><a href="#section-E" class="nav-link grow">Section E</a></li>
+                    <li class="nav-item"><a href="#section-F" class="nav-link grow">Section F</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Sections-->
+    <section id="section-A" class="full-screen" style="background: #a1a;">A</section>
+    <section id="section-B" class="full-screen" style="background: #2b2;">B</section>
+    <section id="section-C" class="full-screen" style="background: #c3c;">C</section>
+    <section id="section-D" class="full-screen" style="background: #4d4;">D</section>
+    <section id="section-E" class="full-screen" style="background: #e5e;">E</section>
+    <section id="section-F" class="full-screen" style="background: #6d6">F</section>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script>
+        // Init Scrollspy
+        $('body').scrollspy({ target: '#main-nav' });
+
+        // Smooth Scrolling
+        $("#main-nav a").on('click', function (event) {
+            if (this.hash !== "") {
+                // clicked anchors will not take the browser to a new URL
+                event.preventDefault();
+
+                // this.hash reads the href attribute of this, and gets the part of the URL beginning with #
+                const hash = this.hash;
+
+                $('html, body').animate({
+                scrollTop: $(hash).offset().top // property to interpolate
+                }, 800, // duration
+                function () { // on complete
+                window.location.hash = hash;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fullscreen div */
+.full-screen {
+    /* take up 100% of the view height */
+    height: 100vh;
+
+    /* make text big and white */
+    font-size: 10em;
+    color: white;
+
+    /* align text to center vwrtically and horizontally */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100vh;
+}
+
+/* Actual navbar style */
+.navbar {
+    border-bottom: #008ed6 3px solid;
+    opacity: 0.8;
+    background-color: #093952;
+}
+
+/* Animated grow on hover */
+.grow { 
+    transition: all .2s ease-in; 
+}
+
+.grow:hover { 
+    transform: scale(1.05); 
+}
