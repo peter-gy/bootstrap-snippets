@@ -1,0 +1,13 @@
+#faq .card {
+    border: #333;
+}
+  
+#faq a {
+    color: #dfd335;
+    text-decoration: none;
+}
+  
+#faq .card-body,
+#faq .card-header {
+    background: #333;
+}
